@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jean Rochelle – Portfolio</title>
+  <meta name="description" content="Jean Rochelle's Portfolio — ECAM, Lean specialization, 5th year. Projects, Travels, Contact.">
+  <!-- Lien CSS : assure-toi que le dossier s'appelle bien "css" et le fichier "styles.css" -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Jean Rochelle</a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="projets.html">Projects</a>
+      <a href="voyages.html">Travels</a>
+      <a href="proust.html">Proust</a>
+      <a href="resume.html">Résumé Template</a>
+      <a href="cover-letter.html">Cover Letter</a>
+      <a href="volunteer.html">Volunteer work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO avec titre centré au-dessus des 2 blocs -->
+  <section class="section">
+    <div class="container hero">
+
+      <!-- Titre en avant, centré -->
+      <div class="hero-header">
+        <h1 class="hero-title">Hello, I am Jean Rochelle</h1>
+        <p class="hero-subtitle">
+          ECAM — Lean Manufacturing specialization — 5th year. I like sports, computer science, and traveling. I am open minded.
+        </p>
+      </div>
+
+      <!-- Deux blocs sous le titre -->
+      <div class="grid cols-2">
+        <!-- Colonne gauche : citation + tags + boutons -->
+        <div>
+          <p class="lead">
+            <em>
+              “Treat an individual as he is, and he will remain as he is.
+              Treat him as he should and can become, and he will become what he should and can be."
+              <br>
+              -Goethe-
+            </em>
+          </p>
+
+          <div class="tags" style="margin-top: 12px;">
+            <span class="badge">Sport</span>
+            <span class="badge">Computer Science</span>
+            <span class="badge">Traveling</span>
+            <span class="badge">Lean Management</span>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <a class="btn" href="projets.html">My Projects</a>
+            <a class="btn btn-outline" href="voyages.html" style="margin-left: 8px;">My Travels</a>
+          </div>
+        </div>
+
+        <!-- Colonne droite : About me -->
+        <div>
+          <div class="card">
+            <h2>About me</h2>
+            <p>
+              I am in my 5th year of engineering studies, specializing in Lean Manufacturing.
+              I enjoy watching and playing sports, tinkering with computer systems, and discovering new places.
+            </p>
+            <p>Here you can explore my school projects and my international experiences.</p>            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROUST (aperçu sur la home) -->
+  <section class="section">
+    <div class="container">
+      <h1>Proust Questionnaire</h1>
+      <p class="lead">
+        Here are my personal answers to the 13 first questions of the Proust Questionnaire.
+      </p>
+
+      <div class="grid cols-2" style="margin-top: 12px;">
+        <article class="card">
+          <ul>
+            <li><strong>My favorite virtue?</strong><br>Generosity</li>
+            <li><strong>The main trait of my character?</strong><br>Curious</li>
+            <li><strong>My favorite occupation?</strong><br>Modifying and tinkering my computer</li>
+            <li><strong>My main quality?</strong><br>I am Iron man</li>
+            <li><strong>The quality I prefer in women?</strong><br>Perserverance</li>
+            <li><strong>The country where I would like to live?</strong><br>Deep in the Alaskan countryside</li>
+            <li><strong>What I value most in my friends?</strong><br>Their modesty</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <ul>
+            <li><strong>My favorite color?</strong><br>Dark Green</li>
+            <li><strong>My main fault?</strong><br>Indecisive</li>
+            <li><strong>My dream of happiness?</strong><br>Making your hobby out of your job</li>
+            <li><strong>Apart from myself, who would I like to be?</strong><br>Neil Armstrong</li>
+            <li><strong>The quality I prefer in men?</strong><br>Dedication</li>
+            <li><strong>What would be my greatest misfortune?</strong><br>To lose my family</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container small" style="display:flex; align-items:center; gap:12px; justify-content:center; flex-wrap:wrap;">
+    <span>© <span id="year"></span> Jean Rochelle — All rights reserved.</span>
+    <a href="contact.html" class="btn btn-outline">
+      Contact me
+    </a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

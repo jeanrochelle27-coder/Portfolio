@@ -1,0 +1,355 @@
+/* ========== Base ========== */
+:root {
+  --bg: #050814;       /* fond plus sombre */
+  --fg: #e8edf2;
+  --muted: #9fb0c0;
+  --card: #12161b;
+  --border: #1e2630;
+  --accent: #3B82F6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  /* AVANT: 56px 0, maintenant plus compact */
+  padding: 32px 0;
+}
+
+.section h1,
+.section h2 {
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.section p {
+  color: var(--muted);
+}
+
+/* ========== Buttons ========== */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  border: 1px solid transparent;
+  transition: transform .15s ease, filter .2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline:hover {
+  filter: brightness(1.2);
+}
+
+/* ========== Cards & Grid ========== */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 800px) {
+  .grid.cols-3,
+  .grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Header ========== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(5, 8, 20, 0.9);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.nav a {
+  margin-left: 16px;
+  color: var(--fg);
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active {
+  opacity: 1;
+  position: relative;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* ========== Hero ========== */
+.hero {
+  /* AVANT: 72px 0 24px */
+  padding: 40px 0 16px;
+}
+
+/* Wrapper du titre + sous-titre */
+.hero-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin: 0 0 8px;
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero p.lead {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ========== Lists / Tags ========== */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+  padding: 24px 0;
+  color: var(--muted);
+  background: #020617;
+}
+
+/* ========== Images ========== */
+img.responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+/* Images dans les cards */
+.card img.img-center {
+  width: 100%;
+  max-width: 430px;   /* Elles rentrent dans les onglets */
+  display: block;
+  margin: 12px auto 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+.indent {
+  text-indent: 2em; /* tu peux mettre 1em, 3em… comme tu veux */
+}
+
+.indent2 {
+  text-indent: 4em; /* tu peux mettre 1em, 3em… comme tu veux */
+}
+
+/* Étend la zone centrale sur presque toute la largeur */
+.container {
+  max-width: 95% !important;
+}
+
+/* Force la grille 2 colonnes à être bien large */
+.grid.cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px; /* espace entre les deux cartes */
+}
+
+/* Cartes plus*
+/* Centre la grille de projets */
+.grid.cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-content: center; /* centre horizontalement */
+  align-items: start;
+  width: 100%;
+}
+
+/* Limite la largeur totale pour un rendu propre */
+.container .grid.cols-2 {
+  max-width: 1100px;
+  margin: 0 auto; /* centre le bloc */
+}
+
+/* Les cartes prennent toute leur colonne */
+.card {
+  width: 100%;
+}
+/* Centre la grille sur la page */
+.grid.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  justify-content: center;   /* centre la grille */
+  justify-items: center;     /* centre chaque carte */
+  margin: 0 auto;
+}
+
+/* Option : limite la largeur du bloc pour un meilleur centrage */
+.container .grid.cols-3 {
+  max-width: 1200px;   /* tu peux ajuster à 1100 ou 1300 */
+}
+
+/* Agrandir les images un peu */
+.card .img-center {
+  width: 95%;          /* augmente la taille par rapport au 150px */
+  max-width: 260px;    /* empêche que ça dépasse */
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+  border-radius: 8px;
+}
+/* Wrapper qui centre vraiment tout le bloc */
+.projects-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Grille centrée, taille fixe pour éviter qu'elle colle à gauche */
+.projects-wrapper .grid.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 300px); /* fixe la largeur des cartes */
+  gap: 32px;
+  justify-content: center;
+}
+
+/* Centrer les cartes */
+.projects-wrapper .card {
+  margin: 0 auto;
+}
+
+/* Agrandir légèrement les images */
+.projects-wrapper .card .img-center {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 12px auto;
+  display: block;
+}
+.single-card-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px; /* espace au-dessus */
+}
+
+/* optionnel mais conseillé : fixe la largeur max de la carte */
+.single-card-center .card {
+  max-width: 380px;  /* tu peux augmenter */
+  width: 100%;
+}
